@@ -1,0 +1,19 @@
+{
+  "name": "Rust Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "stable"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "matklad.rust-analyzer"
+      ]
+    }
+  },
+  "postCreateCommand": "rustup --version || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source $HOME/.cargo/env && rustup toolchain install stable",
+  "remoteUser": "vscode"
+}
